@@ -22,7 +22,7 @@ public class Main {
 	static private final String CONFIGURATION_FILE = "jhttpd.cfg";
 	
 	// Regex for parsing "GET" requests
-	static private final Pattern getPattern = Pattern.compile("^GET\\s+(.+)\\s+HTTP/[\\d\\.]+$");
+	static private final Pattern patternGet = Pattern.compile("^GET\\s+(.+)\\s+HTTP/[\\d\\.]+$");
 	
 	// Regex for parsing server config variable names
 	// static private final Pattern serverVarPattern = Pattern.compile("^server\\.([^\\.]+)\\.([^\\.]+)$");
@@ -204,7 +204,7 @@ public class Main {
 			// Use a regex to find the requested document
 			// inside the first line
 	
-			Matcher matcher = getPattern.matcher(firstLine);
+			Matcher matcher = patternGet.matcher(firstLine);
 			if (matcher.matches()) {
 				// Yes, we got it
 				String doc = matcher.group(1);
