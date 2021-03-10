@@ -1,10 +1,6 @@
 package jhttpd;
 
 /**
- * 
- */
-
-/**
  * @author Mikhail Firulin
  *
  */
